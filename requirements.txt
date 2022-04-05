@@ -1,0 +1,5 @@
+asgiref
+Django~=3.2.12
+pytz
+sqlparse
+qrcode~=7.3.1
