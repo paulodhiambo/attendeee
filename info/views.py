@@ -2,14 +2,15 @@ import datetime
 from io import BytesIO
 
 import qrcode
-from django.shortcuts import render, get_object_or_404
+import qrcode.image.svg
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from .models import Dept, Class, Student, Attendance, Course, Teacher, Assign, AttendanceTotal, time_slots, \
-    DAYS_OF_WEEK, AssignTime, AttendanceClass, StudentCourse, Marks, MarksClass
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required
-import qrcode.image.svg
+
+from .models import Student, Attendance, Course, Teacher, Assign, AttendanceTotal, time_slots, \
+    DAYS_OF_WEEK, AssignTime, AttendanceClass, StudentCourse, MarksClass
 
 
 # Create your views here.
@@ -92,7 +93,7 @@ def t_attendance(request, ass_c_id):
     c = ass.class_id
     factory = qrcode.image.svg.SvgImage
     img = qrcode.make(
-        f"{ass_c_id} {datetime.date.today()} {datetime.datetime.now().time()}",
+        f"{ass_c_id}",
         image_factory=factory,
         box_size=20)
     stream = BytesIO()
@@ -169,7 +170,7 @@ def t_extra_class(request, assign_id):
     c = ass.class_id
     factory = qrcode.image.svg.SvgImage
     img = qrcode.make(
-        f"{c} {datetime.date.today()} {datetime.datetime.now().time()}",
+        f"{c}",
         image_factory=factory,
         box_size=20)
     stream = BytesIO()

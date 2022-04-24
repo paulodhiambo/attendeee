@@ -1,6 +1,5 @@
 from django.urls import path
-from . import views
-
+from . import views, api_view
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -32,5 +31,10 @@ urlpatterns = [
     path('teacher/<int:marks_c_id>/marks_entry/', views.t_marks_entry, name='t_marks_entry'),
     path('teacher/<int:marks_c_id>/marks_entry/confirm/', views.marks_confirm, name='marks_confirm'),
     path('teacher/<int:marks_c_id>/Edit_marks/', views.edit_marks, name='edit_marks'),
+
+    # API
+    path('api/v1/login/', api_view.LoginView.as_view()),
+    path('api/v1/confirm/', api_view.confirm),
+    path('api/v1/course/', api_view.StudentCourseList.as_view()),
 
 ]
