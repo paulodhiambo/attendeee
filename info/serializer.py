@@ -58,3 +58,4 @@ class StudentCourseSerializer(serializers.ModelSerializer):
         model = StudentCourse
         fields = "__all__"
         depth = 1
+
