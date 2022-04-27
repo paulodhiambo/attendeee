@@ -83,11 +83,11 @@ DATABASES = {
     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'd4dot48581t2nr',
-    #     'USER': 'csqydhqfzsmuuh',
-    #     'PASSWORD': 'a5f1b46e0980c678628ee7c0e9685502e39fa2c6ed2b2d6bb49d6143618e44b2',
-    #     'HOST': 'ec2-3-230-122-20.compute-1.amazonaws.com',
-    #     'PORT': '5432',
+    #     'NAME': 'defaultdb',
+    #     'USER': 'avnadmin',
+    #     'PASSWORD': 'AVNS_AxToPoOpyWKeW61',
+    #     'HOST': 'pg-1d1e3da-paulodhiambo962-8702.aivencloud.com',
+    #     'PORT': '13217',
     # }
 }
 
